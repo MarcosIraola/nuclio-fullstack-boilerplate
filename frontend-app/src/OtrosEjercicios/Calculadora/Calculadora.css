@@ -1,0 +1,55 @@
+.contenedor {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #506f7f;
+    border-radius: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 15px;
+    margin-top: 20px;
+    padding-top: 35px;
+}
+
+.screen {
+    width: 150px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.numeros {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+}
+
+button {
+    text-align: center;
+    color: black;
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    border-radius: 40px;
+    margin: 1px 1px 3px 1px;
+    outline: none;
+}
+
+.numeros button:hover {
+    box-shadow: 0 0 12px #454545;
+}
+
+.op {
+    background-color: #447676;
+    color: white;
+}
+
+.igual {
+    background-color: #d23b00;
+    color: white;
+}

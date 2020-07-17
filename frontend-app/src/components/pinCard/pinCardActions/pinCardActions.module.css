@@ -1,0 +1,44 @@
+.__contenedor {
+    position: absolute;
+    width: 236px;
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background-color: rgba(0,0,0, 0.30);
+    cursor: zoom-in;
+}
+
+.__nombre {
+    color: black;
+    padding: 13px;
+    border-radius: 25px;
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.__save {
+    color: white;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 13px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.__save:hover {
+    background-color: #9a0000;
+    cursor: pointer;
+}

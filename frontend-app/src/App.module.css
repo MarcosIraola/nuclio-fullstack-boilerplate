@@ -1,0 +1,6 @@
+.__forms__container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
