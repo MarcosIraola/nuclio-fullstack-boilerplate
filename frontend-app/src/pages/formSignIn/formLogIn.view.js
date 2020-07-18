@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import styles from './formularioSignIn.module.css';
+import styles from './formLogIn.module.css';
+import {setJWTInLocalStorage} from "../../utils/localStorage.utils";
 
-const FormularioSignIn = () => {
+const FormLogIn = ({setReloadToken, reloadToken}) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [jwtToken, setJwtToken] = useState('');
 
     const submitLogIn = () => {
         const url = 'http://localhost/api/auth/login';
@@ -31,7 +31,8 @@ const FormularioSignIn = () => {
             })
             .then(payload => {
                     console.log("Log in successful.");
-                    setJwtToken(payload.access_token);
+                    setJWTInLocalStorage(payload.access_token);
+                    setReloadToken(!reloadToken);
                 }
             )
             .catch(error => console.log(error));
@@ -44,7 +45,7 @@ const FormularioSignIn = () => {
                 <img src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'} className={styles.__logo}/>
             </div>
 
-            <h1 className={styles.__h1}>Welcome to Pinterest!</h1>
+            <h1 className={styles.__h1}>Log in to Pinterest!</h1>
 
             <label htmlFor="email-form" className={styles.__form__titulo}>Email</label>
             <input id="email-form" type={"text"} value={email} className={styles.__form__relleno} placeholder={'Email'} onChange={e => setEmail(e.target.value)} />
@@ -64,4 +65,4 @@ const FormularioSignIn = () => {
     );
 }
 
-export default FormularioSignIn;
+export default FormLogIn;

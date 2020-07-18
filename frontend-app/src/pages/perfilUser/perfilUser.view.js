@@ -1,29 +1,30 @@
 import React, {useState, useEffect} from 'react';
 import styles from './perfilUser.module.css';
+import {deleteToken, getTokenFromLocalStorage} from "../../utils/localStorage.utils";
 
-const PerfilUser = () => {
-
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+const PerfilUser = ({setReloadToken, reloadToken}) => {
 
     const [user, setUser] = useState('');
+    const [jwtToken, setJwtToken] = useState(getTokenFromLocalStorage());
 
-    const jwtToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE1OTQ5OTE4ODQsImV4cCI6MTU5NDk5NTQ4NCwibmJmIjoxNTk0OTkxODg0LCJqdGkiOiJxdTlzWWZGMmFrWXhQdlpHIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.nKa5ODlEM5vKrixN63lLmcMqr71uUYffFy72j2H7d2o';
+    useEffect(() => {
+        const token = getTokenFromLocalStorage();
+        setJwtToken(token);
+    }, [reloadToken])
 
     useEffect(()=> {
-
         const url = 'http://localhost/api/auth/me';
         const options = {
             method: 'GET',
             headers: new Headers(
-                {'Authorization': 'Bearer' + jwtToken}
+                {'authorization': 'Bearer' + jwtToken.token}
             ),
             mode: 'cors'
         };
-
         fetch (url, options)
             .then(response => {
-                if (response.status >= 200 || response < 300) {
+                debugger;
+                if (response.status >= 200 && response.status < 300) {
                     return response.json();
                 }
                 return Promise.reject(response.status);
@@ -32,8 +33,14 @@ const PerfilUser = () => {
                 setUser(payload);
             })
 
-            .catch(error => console.log(error));
-        }, []);
+            .catch(error => setUser(''));
+        }, [jwtToken]);
+
+    const submitLogOut = () => {
+        deleteToken();
+        setReloadToken(!reloadToken);
+        console.log('Log out succsesful')
+    };
 
     return (
         <div className={styles.__contenedor}>
@@ -46,9 +53,29 @@ const PerfilUser = () => {
                 <span className={styles.__usuario__nombre}>{user.first_name} {user.last_name}</span>
             </div>
 
-            <div className={styles.__titulosBoards__contenedor}>
-                <span className={styles.__tituloBoards}>Boards</span>
-                {/*<span className={'titulo__boards'}>Pins</span>*/}
+            <div className={styles.__button__contenedor}>
+                <input type={"button"} value={"Log out"} className={styles.__button__logOut} onClick={submitLogOut}/>
+            </div>
+
+            <div className={styles.__tituloBoards__contenedor}>
+                <span className={styles.__tituloBoards}>Your borads</span>
+
+                <div>
+                    <div className={styles.__boards__contenedor}>
+                        <div className={styles.__boards__contenedor__img01}>
+                            <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img01}/>
+                        </div>
+                        <div>
+                            <div className={styles.__boards__contenedor__img02}>
+                                <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img02}/>
+                            </div>
+                            <div className={styles.__boards__contenedor__img03}>
+                                <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img03}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>

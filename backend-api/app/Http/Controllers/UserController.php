@@ -43,7 +43,6 @@ class UserController extends Controller
             'email'=>['required', 'string', 'max:255'],
             'username'=>['required', 'string', 'max:255'],
             'password'=>['required', 'string', 'max:255'],
-            'bio'=>['required', 'string', 'max:255'],
         ]);
 
         if ($userValidator->fails()){

@@ -22,7 +22,7 @@ const ListPins = () => {
                 }
             )
             .then(payload => {
-                    console.log("saved");
+                    console.log("List pins saved");
                     setPins(payload);
                 }
             )
