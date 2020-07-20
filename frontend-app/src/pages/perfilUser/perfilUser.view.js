@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './perfilUser.module.css';
 import {deleteToken, getTokenFromLocalStorage} from "../../utils/localStorage.utils";
 import {Link} from "react-router-dom";
+import {PINFORMBOARD} from "../../routes/routes";
 
 const PerfilUser = ({setReloadToken, reloadToken}) => {
 
@@ -79,7 +80,7 @@ const PerfilUser = ({setReloadToken, reloadToken}) => {
             </div>
 
             <div className={styles.__contenedorButtonAgregar}>
-                <Link to="/pinBoardForm"><img src={'https://image.flaticon.com/icons/png/512/20/20183.png'} className={styles.__fav__button}/></Link>
+                <Link to={PINFORMBOARD}><img src={'https://image.flaticon.com/icons/png/512/20/20183.png'} className={styles.__fav__button}/></Link>
                 <img src={'https://image.flaticon.com/icons/png/512/36/36601.png'} className={styles.__fav__button}/>
             </div>
 

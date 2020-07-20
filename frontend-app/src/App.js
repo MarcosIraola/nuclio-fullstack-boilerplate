@@ -13,6 +13,8 @@ import BoardForm from "./components/boardForm/boardForm.view";
 import PerfilUser from "./pages/perfilUser/perfilUser.view";
 import FormLogIn from "./pages/formSignIn/formLogIn.view";
 import FormRegister from "./pages/formRegister/formRegister.view";
+import {HOME, SIGNIN, LOGIN, PERFILUSER, PINFORMBOARD} from "./routes/routes";
+
 
 function App() {
 
@@ -25,23 +27,23 @@ function App() {
 
                 <Switch>
 
-                    <Route path="/home">
+                    <Route exact path={HOME}>
                         <Home/>
                     </Route>
 
-                    <Route path="/signin">
+                    <Route path={SIGNIN}>
                         <FormRegister/>
                     </Route>
 
-                    <Route path="/login">
+                    <Route path={LOGIN}>
                         <FormLogIn setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                     </Route>
 
-                    <Route path="/perfilUser">
+                    <Route path={PERFILUSER}>
                         <PerfilUser setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                     </Route>
 
-                    <Route path="/pinBoardForm">
+                    <Route path={PINFORMBOARD}>
                         <div className={styles.__forms__container}>
                             <PinForm/>
                             <BoardForm/>
