@@ -8,6 +8,7 @@ const BoardForm = () => {
     const [user_id, setUserId] = useState('');
 
     const submitBoardForm = () => {
+
         const url = "http://localhost/api/boards";
         const body = {
             name: name,

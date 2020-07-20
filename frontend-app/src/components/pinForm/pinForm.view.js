@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './pinForm.module.css';
-import Modal from "../../components/modal/modal.view";
+import Modal from "../modal/modal.view";
 
 const PinForm = () => {
     const [note, setNote] = useState('');

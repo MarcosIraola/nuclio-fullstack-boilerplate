@@ -1,4 +1,8 @@
 .__contenedor {
+    margin-top: 100px;
+}
+
+.__contenedorButtons {
     position: fixed;
     flex-direction: column;
     height: 50px;

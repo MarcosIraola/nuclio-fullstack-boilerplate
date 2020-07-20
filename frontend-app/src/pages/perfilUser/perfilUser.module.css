@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .__foto__contenedor{
@@ -110,4 +110,29 @@
     border-bottom-right-radius: 15px;
     background-size: cover;
     background-position: center;
+}
+
+.__contenedorButtonAgregar {
+    position: fixed;
+    flex-direction: column;
+    height: 50px;
+    width: 25px;
+    right: 38px;
+    bottom:60px;
+    margin:0;
+    padding:0;
+}
+
+.__fav__button {
+    width: 17px;
+    height: 17px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 3px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0, 0.50);
+}
+
+.__fav__button:hover {
+    cursor: pointer;
 }
