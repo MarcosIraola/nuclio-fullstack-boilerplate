@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Log;
 |
 */
 
-Route::get('test', function (){
-   Log::info( 'TEST recived');
-   return'Hello World';
-});
-
 Route::group([
 
     'middleware' => 'api',
@@ -40,40 +35,67 @@ Route::group([
 |--------------------------------------------------------------------------
 */
 
-Route::get('users', 'UserController@all');
-Route::get('users/{id}', 'UserController@getById');
-Route::get('users/email/{email}', 'UserController@getByEmail');
-Route::get('users/username/{username}', 'UserController@getByUsername');
-Route::post('users', 'UserController@create');
-Route::put('users/{id}', 'UserController@updateById');
-Route::delete('users/{id}', 'UserController@delete');
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'users'
+
+], function ($router){
+
+    Route::get('','UserController@all');
+    Route::get('{id}', 'UserController@getById');
+    Route::get('email/{email}', 'UserController@getByEmail');
+    Route::get('username/{username}', 'UserController@getByUsername');
+    Route::post('UserController@create');
+    Route::put('{id}', 'UserController@updateById');
+    Route::delete('{id}', 'UserController@delete');
+
+});
 
 /*
 |--------------------------------------------------------------------------
 | Board Routes
 |--------------------------------------------------------------------------
 */
-Route::get('boards', 'BoardController@all');
-Route::get('boards/{id}', 'BoardController@getById');
-Route::get('boards/user/{userId}', 'BoardController@getByUser');
-Route::post('boards', 'BoardController@create');
-Route::put('boards/{id}', 'BoardController@updateById');
-Route::delete('boards/{id}', 'BoardController@delete');
+
+Route:: group([
+
+    'middleware' => 'api',
+    'prefix' => 'boards'
+
+], function($router){
+
+    Route::get('', 'BoardController@all');
+    Route::get('{id}', 'BoardController@getById');
+    Route::get('user/{userId}', 'BoardController@getByUser');
+    Route::post('', 'BoardController@create');
+    Route::put('{id}', 'BoardController@updateById');
+    Route::delete('{id}', 'BoardController@delete');
+
+});
 
 /*
 |--------------------------------------------------------------------------
 | Pin Routes
 |--------------------------------------------------------------------------
 */
-Route::get('pins', 'PinController@all');
-Route::get('pins/{id}', 'PinController@getById');
-Route::get('pins/board/{boardId}', 'PinController@GetByBoard');
-Route::post('pins', 'PinController@create');
-Route::put('pins/{id}', 'PinController@updateById');
-Route::delete('pins/{id}', 'PinController@delete');
-/*
-|--------------------------------------------------------------------------
-| Search Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('search/{query}', 'SearchController@searchPinsByNoteAndColor');
+
+Route:: group([
+
+    'middleware' => 'api',
+    'prefix' => 'pins'
+
+], function($router){
+
+    Route::get('', 'PinController@all');
+    Route::get('{id}', 'PinController@getById');
+    Route::get('board/{boardId}', 'PinController@GetByBoard');
+    Route::post('', 'PinController@create');
+    Route::put('{id}', 'PinController@updateById');
+    Route::delete('{id}', 'PinController@delete');
+
+});
+
+    Route::get('search/{query}', 'SearchController@searchPinsByNoteAndColor');
+
+
