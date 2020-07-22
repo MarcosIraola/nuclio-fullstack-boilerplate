@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import styles from './formLogIn.module.css';
 import {setJWTInLocalStorage} from "../../utils/localStorage.utils";
+import { useHistory } from "react-router-dom";
+import {PERFILUSER} from "../../routes/routes";
 
 const FormLogIn = ({setReloadToken, reloadToken}) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const submitLogIn = () => {
         const url = 'http://localhost/api/auth/login';
@@ -33,6 +36,7 @@ const FormLogIn = ({setReloadToken, reloadToken}) => {
                     console.log("Log in successful.");
                     setJWTInLocalStorage(payload.access_token);
                     setReloadToken(!reloadToken);
+                    history.push(PERFILUSER);
                 }
             )
             .catch(error => console.log(error));

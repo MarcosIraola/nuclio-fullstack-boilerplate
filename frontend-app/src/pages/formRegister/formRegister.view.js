@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styles from './formRegister.module.css';
+import {useHistory} from "react-router-dom";
+import {LOGIN} from "../../routes/routes";
 
 const FormRegister = () => {
 
@@ -8,6 +10,7 @@ const FormRegister = () => {
     const [username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const history = useHistory();
 
     const SubmitNewUser = () => {
         const url = "http://localhost/api/users";
@@ -36,6 +39,7 @@ const FormRegister = () => {
             )
             .then(payload => {
                     console.log("New user", payload);
+                    history.push(LOGIN);
                 }
             )
             .catch(error => console.log(error));

@@ -11,9 +11,9 @@ import Home from "./pages/home/home.view";
 import PinForm from "./components/pinForm/pinForm.view";
 import BoardForm from "./components/boardForm/boardForm.view";
 import PerfilUser from "./pages/perfilUser/perfilUser.view";
-import FormLogIn from "./pages/formSignIn/formLogIn.view";
+import FormLogIn from "./pages/formLogIn/formLogIn.view";
 import FormRegister from "./pages/formRegister/formRegister.view";
-import {HOME, SIGNIN, LOGIN, PERFILUSER, PINFORMBOARD} from "./routes/routes";
+import {HOME, SIGNIN, LOGIN, PERFILUSER, PINBOARDFORM} from "./routes/routes";
 
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
                         <PerfilUser setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                     </Route>
 
-                    <Route path={PINFORMBOARD}>
+                    <Route path={PINBOARDFORM}>
                         <div className={styles.__forms__container}>
                             <PinForm/>
                             <BoardForm/>
