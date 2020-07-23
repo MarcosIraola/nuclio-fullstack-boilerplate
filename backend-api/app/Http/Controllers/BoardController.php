@@ -35,8 +35,7 @@ class BoardController extends Controller
     {
         $boardValidator = Validator::make($request->all(),[
             'name'=>['required','string','max:255'],
-            'description'=>['required','string','max:255'],
-            'user_id'=>['required','integer']
+            'description'=>['required','string','max:255']
         ]);
 
         if($boardValidator->fails()){
@@ -47,7 +46,7 @@ class BoardController extends Controller
         $board = Board::create([
             'name'=>$request->name,
             'description'=>$request->description,
-            'user_id'=>$request->user_id,
+            'user_id'=>auth()->user()->id,
         ]);
         $board->save();
         return response()->json("Created", 201);

@@ -27,7 +27,6 @@ const PerfilUser = ({setReloadToken, reloadToken}) => {
         };
         fetch (url, options)
             .then(response => {
-                debugger;
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
                 }

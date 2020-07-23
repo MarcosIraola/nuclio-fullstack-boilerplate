@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from './boardForm.module.css';
+import {getTokenFromLocalStorage} from "../../utils/localStorage.utils";
 
 const BoardForm = () => {
 
@@ -13,12 +14,12 @@ const BoardForm = () => {
         const body = {
             name: name,
             description: description,
-            user_id: 1,
         };
         const options = {
             method: 'POST',
             headers: new Headers({
-                'Content-type': 'application/json'
+                'Content-type': 'application/json',
+                'authorization': 'Bearer' + getTokenFromLocalStorage().token
             }),
             mode: 'cors',
             body: JSON.stringify(body),
@@ -50,7 +51,7 @@ const BoardForm = () => {
             <input id="description-form" type={"textarea"} className={styles.__form__relleno} value={description} placeholder={'Tell us about your board'} onChange={e => setDescription(e.target.value)}/>
 
             <label htmlFor={'user-form'} className={styles.__form__titulo}>User Id</label>
-            <input id={'user-form'} type={'text'} value={1} className={styles.__form__relleno}/>
+            <input id={'user-form'} type={'text'} value={'asd'} className={styles.__form__relleno}/>
 
             <div className={styles.__button__contenedor}>
                 <input type={"button"} value={"Submit"} className={styles.__form__submit} onClick={submitBoardForm} />

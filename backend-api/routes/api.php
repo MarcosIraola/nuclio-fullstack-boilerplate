@@ -46,7 +46,7 @@ Route::group([
     Route::get('{id}', 'UserController@getById');
     Route::get('email/{email}', 'UserController@getByEmail');
     Route::get('username/{username}', 'UserController@getByUsername');
-    Route::post('UserController@create');
+    Route::post('','UserController@create');
     Route::put('{id}', 'UserController@updateById');
     Route::delete('{id}', 'UserController@delete');
 

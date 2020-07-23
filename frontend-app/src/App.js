@@ -24,32 +24,25 @@ function App() {
         <Router>
             <div>
                 <NavBar/>
-
                 <Switch>
-
                     <Route exact path={HOME}>
                         <Home/>
                     </Route>
-
                     <Route path={SIGNIN}>
                         <FormRegister/>
                     </Route>
-
                     <Route path={LOGIN}>
                         <FormLogIn setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                     </Route>
-
                     <Route path={PERFILUSER}>
                         <PerfilUser setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                     </Route>
-
                     <Route path={PINBOARDFORM}>
                         <div className={styles.__forms__container}>
                             <PinForm/>
                             <BoardForm/>
                         </div>
                     </Route>
-
                 </Switch>
 
             </div>
