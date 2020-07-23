@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './formRegister.module.css';
-import {useHistory} from "react-router-dom";
-import {LOGIN} from "../../routes/routes";
+import {Link, useHistory} from "react-router-dom";
+import {LANDING, LOGIN} from "../../routes/routes";
 
 const FormRegister = () => {
 
@@ -54,6 +54,10 @@ const FormRegister = () => {
                     <img src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'} className={styles.__logo}/>
                 </div>
 
+                <Link to={LANDING}>
+                    <img className={styles.__closeImg} src={'https://image.flaticon.com/icons/svg/1828/1828778.svg'}/>
+                </Link>
+
                 <h1 className={styles.__h1}>Welcome to Pinterest!</h1>
 
                 <label htmlFor="email-submit-form" className={styles.__form__titulo}>Email</label>
@@ -75,7 +79,9 @@ const FormRegister = () => {
                     <input type={"button"} value={"Register"} className={styles.__form__register} onClick={SubmitNewUser}/>
                 </div>
             </div>
-            <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'}/>
+            <Link className={styles.__link} to={LANDING}>
+                <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'}/>
+            </Link>
         </div>
     );
 }

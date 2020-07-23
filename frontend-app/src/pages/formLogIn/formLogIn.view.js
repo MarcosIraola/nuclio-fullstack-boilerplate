@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styles from './formLogIn.module.css';
 import {setJWTInLocalStorage} from "../../utils/localStorage.utils";
-import { useHistory } from "react-router-dom";
-import {HOME, PERFILUSER} from "../../routes/routes";
+import {Link, useHistory} from "react-router-dom";
+import {HOME, LANDING} from "../../routes/routes";
 
 const FormLogIn = ({setReloadToken, reloadToken}) => {
 
@@ -49,6 +49,10 @@ const FormLogIn = ({setReloadToken, reloadToken}) => {
                     <img src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'} className={styles.__logo}/>
                 </div>
 
+                <Link to={LANDING}>
+                    <img className={styles.__closeImg} src={'https://image.flaticon.com/icons/svg/1828/1828778.svg'}/>
+                </Link>
+
                 <h1 className={styles.__h1}>Log in to Pinterest!</h1>
 
                 <label htmlFor="email-form" className={styles.__form__titulo}>Email</label>
@@ -65,7 +69,9 @@ const FormLogIn = ({setReloadToken, reloadToken}) => {
                     <input type={"button"} value={"Forgot password?"} className={styles.__forgotPassword}/>
                 </div>
             </div>
-            <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'}/>
+            <Link className={styles.__link} to={LANDING}>
+                <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'}/>
+            </Link>
         </div>
 
     );

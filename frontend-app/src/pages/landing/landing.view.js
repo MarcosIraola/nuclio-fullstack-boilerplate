@@ -12,7 +12,7 @@ const Landing = () => {
             <div className={styles.__elementosLanding}>
                 <img className={styles.__logo} src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'}/>
                 <h1 className={styles.__title}>Welcome to Pinterest!</h1>
-                <span className={styles.__textoLanding}>Log in or register and start discovering</span>
+                <span className={styles.__textoLanding}>Log in or register and start discovering.</span>
 
                 <div className={styles.__contenedorBotones}>
                     <Link className={styles.__link} to={LOGIN}><span className={styles.__pagina__logIn}>Log In</span></Link>
