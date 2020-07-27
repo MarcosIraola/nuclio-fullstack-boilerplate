@@ -14,8 +14,8 @@ export const deleteToken = () => {
     localStorage.removeItem('JWT_KEY');
 }
 
-export const isAuthenticated = () => {
-  const token = getTokenFromLocalStorage();
-      // return token.token ? true : false;
-    return !!token.token;
-};
+// export const isAuthenticated = () => {
+//   const token = getTokenFromLocalStorage();
+//       // return token.token ? true : false;
+//     return !!token.token;
+// };

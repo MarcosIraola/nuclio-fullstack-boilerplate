@@ -30,10 +30,7 @@ function App() {
                 <div>
                     <Switch>
                         <Route exact path={LANDING}>
-                            <Landing />
-                        </Route>
-                        <Route path={HOME}>
-                            <Home />
+                            <Landing/>
                         </Route>
                         <Route path={SIGNIN}>
                             <FormRegister/>
@@ -41,9 +38,12 @@ function App() {
                         <Route path={LOGIN}>
                             <FormLogIn setReloadToken={setReloadToken} reloadToken={reloadToken}/>
                         </Route>
-                        <Route path={PERFILUSER}>
+                        <PrivateRoute path={HOME}>
+                            <Home/>
+                        </PrivateRoute>
+                        <PrivateRoute path={PERFILUSER}>
                             <PerfilUser setReloadToken={setReloadToken} reloadToken={reloadToken}/>
-                        </Route>
+                        </PrivateRoute>
                         <PrivateRoute path={PINBOARDFORM}>
                             <div className={styles.__forms__container}>
                                 <NavBar/>

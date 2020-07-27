@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './navBar.module.css';
-import {Link} from "react-router-dom";
-import {HOME, LOGIN, PERFILUSER, SIGNIN} from "../../routes/routes";
-import {isAuthenticated} from "../../utils/localStorage.utils";
+import { Link } from "react-router-dom";
+import { HOME, PERFILUSER } from "../../routes/routes";
 
 const NavBar = () => {
 
@@ -12,19 +11,11 @@ const NavBar = () => {
             <Link className={styles.__link} to={HOME}><span className={styles.__paginas}>Home</span></Link>
             <input type={'text'} className={styles.__buscador} placeholder={'Search'}/>
 
-            {isAuthenticated()
-                ?
-                <div>
-                    <img src={'https://cdn.icon-icons.com/icons2/494/PNG/512/alarm_icon-icons.com_48364.png'} className={styles.__imagenes}/>
-                    <img src={'https://cdn.icon-icons.com/icons2/1558/PNG/512/353440-bubble-chat-dots-speech-talk_107494.png'} className={styles.__imagenes}/>
-                    <Link to={PERFILUSER}><img src={'https://cdn.icon-icons.com/icons2/1415/PNG/512/ic-username_97587.png'} className={styles.__imagenes}/></Link>
-                </div>
-                :
-                <div className={styles.__navbarNoLoggeado}>
-                    <Link className={styles.__link} to={LOGIN}><span className={styles.__pagina__logIn}>Log In</span></Link>
-                    <Link className={styles.__link} to={SIGNIN}><span className={styles.__pagina__signIn}>Sign in</span></Link>
-                </div>
-            }
+            <div>
+                <img src={'https://cdn.icon-icons.com/icons2/494/PNG/512/alarm_icon-icons.com_48364.png'} className={styles.__imagenes}/>
+                <img src={'https://cdn.icon-icons.com/icons2/1558/PNG/512/353440-bubble-chat-dots-speech-talk_107494.png'} className={styles.__imagenes}/>
+                <Link to={PERFILUSER}><img src={'https://cdn.icon-icons.com/icons2/1415/PNG/512/ic-username_97587.png'} className={styles.__imagenes}/></Link>
+            </div>
 
         </nav>
     )

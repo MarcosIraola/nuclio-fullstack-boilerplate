@@ -5,8 +5,6 @@ import {LOGIN, SIGNIN} from "../../routes/routes";
 
 const Landing = () => {
 
-
-
     return (
         <div className={styles.__contenedorLanding}>
             <div className={styles.__elementosLanding}>

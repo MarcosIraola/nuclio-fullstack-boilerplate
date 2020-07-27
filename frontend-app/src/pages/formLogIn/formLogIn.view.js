@@ -39,7 +39,6 @@ const FormLogIn = () => {
                     setJWTInLocalStorage(payload.access_token);
                     // setReloadToken(!reloadToken);
                     login(payload);
-                    console.log(payload);
                     history.replace(HOME);
                 }
             )
