@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import styles from './listBoard.module.css';
-import PinCard from "../../pins/pinCard/pinCard.view";
 import BoardCard from "../boardCard/boardCard.view";
+import {AuthContext} from "../../../contexts/authentication/authentication.context";
 
 const ListBoard = () => {
 
     const [boards, setBoards] = useState('');
+    const { state } = React.useContext(AuthContext);
 
     useEffect(() => {
-        const url = 'http://localhost/api/boards/user/'+4
+        const url = 'http://localhost/api/boards/user/'+ state.user.id
 
         const options = {
             method: 'GET',
