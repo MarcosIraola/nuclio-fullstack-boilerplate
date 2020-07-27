@@ -36,7 +36,7 @@ const FormLogIn = ({setReloadToken, reloadToken}) => {
                     console.log("Log in successful.");
                     setJWTInLocalStorage(payload.access_token);
                     setReloadToken(!reloadToken);
-                    history.push(HOME);
+                    history.replace(HOME);
                 }
             )
             .catch(error => console.log(error));

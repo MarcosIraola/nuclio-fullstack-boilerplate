@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './boardForm.module.css';
-import {getTokenFromLocalStorage} from "../../utils/localStorage.utils";
+import {getTokenFromLocalStorage} from "../../../utils/localStorage.utils";
 
 const BoardForm = () => {
 

@@ -16,12 +16,6 @@ export const deleteToken = () => {
 
 export const isAuthenticated = () => {
   const token = getTokenFromLocalStorage();
-      // if (token.token) {
-      //     return true;
-      // } else {
-      //     return false;
-      // }
-      //
       // return token.token ? true : false;
     return !!token.token;
 };

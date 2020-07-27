@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './pinForm.module.css';
-import Modal from "../modal/modal.view";
+import Modal from "../../modal/modal.view";
 
 const PinForm = () => {
     const [note, setNote] = useState('');
@@ -39,7 +39,7 @@ const PinForm = () => {
     }
 
     useEffect(() => {
-        const url = 'http://localhost/api/boards';
+        const url = 'http://localhost/api/boards/user/'+4
 
         const options = {
             method: 'GET',
@@ -60,16 +60,6 @@ const PinForm = () => {
             )
             .catch(error => console.log(error));
     }, []);
-
-    // const [state, setState] = { show: false };
-    //
-    // const showModal = () => {
-    //     setState({ show: true });
-    // }
-    //
-    // const hideModal = () => {
-    //     setState({ show: false });
-    // }
 
     return (
         <div className={styles.__contenedor}>

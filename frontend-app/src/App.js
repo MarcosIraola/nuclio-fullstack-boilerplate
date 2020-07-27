@@ -8,13 +8,14 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/navBar/navBar.view";
 import Home from "./pages/home/home.view";
-import PinForm from "./components/pinForm/pinForm.view";
-import BoardForm from "./components/boardForm/boardForm.view";
+import PinForm from "./components/pins/pinForm/pinForm.view";
+import BoardForm from "./components/boards/boardForm/boardForm.view";
 import PerfilUser from "./pages/perfilUser/perfilUser.view";
 import FormLogIn from "./pages/formLogIn/formLogIn.view";
 import FormRegister from "./pages/formRegister/formRegister.view";
 import {HOME, SIGNIN, LOGIN, PERFILUSER, PINBOARDFORM, LANDING} from "./routes/routes";
 import Landing from "./pages/landing/landing.view";
+import BoardCard from "./components/boards/boardCard/boardCard.view";
 
 
 function App() {

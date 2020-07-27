@@ -1,5 +1,5 @@
 import React from 'react';
-import ListPins from "../../components/listPin/listPins.view";
+import ListPins from "../../components/pins/listPin/listPins.view";
 import styles from './home.module.css';
 import {Link} from "react-router-dom";
 import {LANDING, PINBOARDFORM} from "../../routes/routes";
@@ -24,7 +24,7 @@ const Home = () => {
                     </div>
                 </div>
                 :
-                history.push(LANDING)
+                history.replace(LANDING)
             }
         </>
     )

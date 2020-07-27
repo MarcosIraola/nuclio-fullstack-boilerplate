@@ -5,12 +5,16 @@ import {Link} from "react-router-dom";
 import {HOME, LANDING, PINBOARDFORM} from "../../routes/routes";
 import { useHistory } from "react-router-dom";
 import NavBar from "../../components/navBar/navBar.view";
+import BoardCard from "../../components/boards/boardCard/boardCard.view";
+import ListBoard from "../../components/boards/listBoard/listBoard.view";
 
 const PerfilUser = ({setReloadToken, reloadToken}) => {
 
     const [user, setUser] = useState('');
     const [jwtToken, setJwtToken] = useState(getTokenFromLocalStorage());
     const history = useHistory();
+
+    const [boards, setBoards] = useState('');
 
     useEffect(() => {
         const token = getTokenFromLocalStorage();
@@ -48,6 +52,7 @@ const PerfilUser = ({setReloadToken, reloadToken}) => {
 
     };
 
+
     return (
         <>
             {isAuthenticated()
@@ -69,22 +74,7 @@ const PerfilUser = ({setReloadToken, reloadToken}) => {
 
                     <div className={styles.__tituloBoards__contenedor}>
                         <span className={styles.__tituloBoards}>Your borads</span>
-
-                        <div>
-                            <div className={styles.__boards__contenedor}>
-                                <div className={styles.__boards__contenedor__img01}>
-                                    <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img01}/>
-                                </div>
-                                <div>
-                                    <div className={styles.__boards__contenedor__img02}>
-                                        <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img02}/>
-                                    </div>
-                                    <div className={styles.__boards__contenedor__img03}>
-                                        <img src={'https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'} className={styles.__boards__contenedor__img03}/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ListBoard/>
                     </div>
 
                     <div className={styles.__contenedorButtonAgregar}>
