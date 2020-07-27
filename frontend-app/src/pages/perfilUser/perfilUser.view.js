@@ -7,12 +7,14 @@ import { useHistory } from "react-router-dom";
 import NavBar from "../../components/navBar/navBar.view";
 import BoardCard from "../../components/boards/boardCard/boardCard.view";
 import ListBoard from "../../components/boards/listBoard/listBoard.view";
+import {AuthContext} from "../../contexts/authentication/authentication.context";
 
 const PerfilUser = ({setReloadToken, reloadToken}) => {
 
     const [user, setUser] = useState('');
     const [jwtToken, setJwtToken] = useState(getTokenFromLocalStorage());
     const history = useHistory();
+    const { state, logout } = React.useContext(AuthContext);
 
     const [boards, setBoards] = useState('');
 
@@ -69,7 +71,7 @@ const PerfilUser = ({setReloadToken, reloadToken}) => {
                     </div>
 
                     <div className={styles.__button__contenedor}>
-                        <input type={"button"} value={"Log out"} className={styles.__button__logOut} onClick={submitLogOut}/>
+                        <input type={"button"} value={"Log out"} className={styles.__button__logOut} onClick={logout}/>
                     </div>
 
                     <div className={styles.__tituloBoards__contenedor}>

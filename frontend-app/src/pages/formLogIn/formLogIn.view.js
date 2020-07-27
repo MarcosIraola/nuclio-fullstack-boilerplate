@@ -3,12 +3,14 @@ import styles from './formLogIn.module.css';
 import {setJWTInLocalStorage} from "../../utils/localStorage.utils";
 import {Link, useHistory} from "react-router-dom";
 import {HOME, LANDING} from "../../routes/routes";
+import {AuthContext} from "../../contexts/authentication/authentication.context";
 
-const FormLogIn = ({setReloadToken, reloadToken}) => {
+const FormLogIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
+    const { login } = React.useContext(AuthContext);
 
     const submitLogIn = () => {
         const url = 'http://localhost/api/auth/login';
@@ -35,7 +37,9 @@ const FormLogIn = ({setReloadToken, reloadToken}) => {
             .then(payload => {
                     console.log("Log in successful.");
                     setJWTInLocalStorage(payload.access_token);
-                    setReloadToken(!reloadToken);
+                    // setReloadToken(!reloadToken);
+                    login(payload);
+                    console.log(payload);
                     history.replace(HOME);
                 }
             )
