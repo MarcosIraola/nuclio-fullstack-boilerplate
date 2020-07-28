@@ -9,13 +9,15 @@ import {AuthContext} from "../../contexts/authentication/authentication.context"
 const PerfilUser = () => {
 
     const { state, logout } = React.useContext(AuthContext);
+    const imgPerfil = 'https://s.pinimg.com/images/user/default_280.png';
+    const imgUser = state.user.avatar_url2;
 
     return (
         <div className={styles.__contenedor}>
             <NavBar/>
 
             <div className={styles.__foto__contenedor}>
-                <img src={'https://s.pinimg.com/images/user/default_280.png'}className={styles.__foto__usuario} alt={'Error'}/>
+                <img src={imgPerfil} className={styles.__foto__usuario} alt={'Error'}/>
             </div>
 
             <div className={styles.__usuarioNombre__contenedor}>
