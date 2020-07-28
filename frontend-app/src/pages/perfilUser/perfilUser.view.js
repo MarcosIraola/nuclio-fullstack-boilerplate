@@ -15,7 +15,7 @@ const PerfilUser = () => {
             <NavBar/>
 
             <div className={styles.__foto__contenedor}>
-                <img src={'https://s.pinimg.com/images/user/default_280.png'}className={styles.__foto__usuario}/>
+                <img src={'https://s.pinimg.com/images/user/default_280.png'}className={styles.__foto__usuario} alt={'Error'}/>
             </div>
 
             <div className={styles.__usuarioNombre__contenedor}>
@@ -33,7 +33,7 @@ const PerfilUser = () => {
 
             <div className={styles.__contenedorButtonAgregar}>
                 <Link to={PINBOARDFORM}><img src={'https://image.flaticon.com/icons/png/512/20/20183.png'} className={styles.__fav__button}/></Link>
-                <img src={'https://image.flaticon.com/icons/png/512/36/36601.png'} className={styles.__fav__button}/>
+                <img src={'https://image.flaticon.com/icons/png/512/36/36601.png'} className={styles.__fav__button} alt={'Error'}/>
             </div>
 
         </div>

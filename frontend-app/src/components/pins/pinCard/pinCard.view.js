@@ -11,7 +11,7 @@ const PinCard = ({note, media_url}) => {
              onMouseEnter={() => setIsHovered(true)}
              onMouseLeave={() => setIsHovered(false)}
         >
-            <img src={media_url} className={styles.__imagen}/>
+            <img src={media_url} className={styles.__imagen} alt={'Error'}/>
             {isHovered && <PinCardAction note={note}/>}
 
         </div>

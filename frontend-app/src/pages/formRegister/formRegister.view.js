@@ -51,11 +51,11 @@ const FormRegister = () => {
         <div>
             <div className={styles.__contenedor}>
                 <div className={styles.__logo__contenedor}>
-                    <img src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'} className={styles.__logo}/>
+                    <img src={'https://seeklogo.com/images/P/pinterest-logo-8561DDA2E1-seeklogo.com.png'} className={styles.__logo} alt={'Error'}/>
                 </div>
 
                 <Link to={LANDING}>
-                    <img className={styles.__closeImg} src={'https://image.flaticon.com/icons/svg/1828/1828778.svg'}/>
+                    <img className={styles.__closeImg} src={'https://image.flaticon.com/icons/svg/1828/1828778.svg'} alt={'Error'}/>
                 </Link>
 
                 <h1 className={styles.__h1}>Welcome to Pinterest!</h1>
@@ -80,7 +80,7 @@ const FormRegister = () => {
                 </div>
             </div>
             <Link className={styles.__link} to={LANDING}>
-                <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'}/>
+                <img className={styles.__imgBackgroundHome} src={'https://store-images.s-microsoft.com/image/apps.18327.14204669951057618.66f35ee3-03b9-46a6-b185-b9ce0ffda2f4.2f04a50a-ae96-4ed4-a762-3b3e097eb58f?mode=scale&q=90&h=720&w=1280'} alt={'Error'}/>
             </Link>
         </div>
     );

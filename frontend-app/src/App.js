@@ -36,7 +36,7 @@ function App() {
                             <FormRegister/>
                         </Route>
                         <Route path={LOGIN}>
-                            <FormLogIn setReloadToken={setReloadToken} reloadToken={reloadToken}/>
+                            <FormLogIn/>
                         </Route>
                         <PrivateRoute path={HOME}>
                             <Home/>

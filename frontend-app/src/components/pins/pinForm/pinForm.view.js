@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import styles from './pinForm.module.css';
-import Modal from "../../modal/modal.view";
+import {AuthContext} from "../../../contexts/authentication/authentication.context";
 
 const PinForm = () => {
+
     const [note, setNote] = useState('');
     const [mediaUrl, setMediaUrl] = useState('');
     const [boardId, setBoardId] = useState('');
     const [boards, setBoards] = useState([]);
+
+    const { state } = React.useContext(AuthContext);
 
     const submitPinForm = () => {
         const url = "http://localhost/api/pins";
@@ -39,7 +42,7 @@ const PinForm = () => {
     }
 
     useEffect(() => {
-        const url = 'http://localhost/api/boards/user/'+4
+        const url = 'http://localhost/api/boards/user/'+ state.user.id
 
         const options = {
             method: 'GET',

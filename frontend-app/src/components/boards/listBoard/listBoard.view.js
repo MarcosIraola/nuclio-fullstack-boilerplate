@@ -26,7 +26,6 @@ const ListBoard = () => {
             )
             .then(payload => {
                     setBoards(payload);
-                    console.log('Boards del auth cargados a useState');
                 }
             )
             .catch(error => console.log(error));
@@ -36,7 +35,9 @@ const ListBoard = () => {
         <div className={styles.__contenedor}>
             {boards && boards.map(board => {
                 return (
-                    <BoardCard/>
+                    <BoardCard
+                        key={board.id}
+                    />
                 );
             })}
 
