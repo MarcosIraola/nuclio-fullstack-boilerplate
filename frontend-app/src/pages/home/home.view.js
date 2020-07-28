@@ -12,7 +12,7 @@ const Home = () => {
             <NavBar/>
             <ListPins/>
             <div className={styles.__contenedorFavButtons}>
-                <Link to={PINBOARDFORM}><img src={'https://image.flaticon.com/icons/png/512/20/20183.png'} className={styles.__fav__button}/></Link>
+                <Link to={PINBOARDFORM}><img src={'https://image.flaticon.com/icons/png/512/20/20183.png'} className={styles.__fav__button} alt={'Error'}/></Link>
                 <img src={'https://image.flaticon.com/icons/png/512/36/36601.png'} className={styles.__fav__button} alt={'Error'}/>
             </div>
         </div>

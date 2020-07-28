@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styles from './perfilUser.module.css';
 import {Link} from "react-router-dom";
 import { PINBOARDFORM } from "../../routes/routes";

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styles from './App.module.css';
 import {
     BrowserRouter as Router,
-    Link,
     Switch,
     Route,
     Redirect,
@@ -17,8 +16,6 @@ import FormRegister from "./pages/formRegister/formRegister.view";
 import {HOME, SIGNIN, LOGIN, PERFILUSER, PINBOARDFORM, LANDING} from "./routes/routes";
 import Landing from "./pages/landing/landing.view";
 import {AuthContext, AuthContextProvider} from "./contexts/authentication/authentication.context";
-import BoardCard from "./components/boards/boardCard/boardCard.view";
-
 
 function App() {
 
