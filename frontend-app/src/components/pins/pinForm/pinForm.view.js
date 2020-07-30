@@ -68,11 +68,10 @@ const PinForm = () => {
         <div className={styles.__contenedor}>
             <h1 className={styles.__h1}>Create a Pin!</h1>
             <label htmlFor="note-form" className={styles.__form__titulo}>Title</label>
-            <input id="note-form" type={"text"} value={note} className={styles.__form__relleno} placeholder={'Add your pin title '} onChange={e => setNote(e.target.value)} />
+            <input id="note-form" type="text" value={note} className={styles.__form__relleno} placeholder='Add your pin title ' onChange={e => setNote(e.target.value)} />
 
             <label htmlFor="media-form" className={styles.__form__titulo}>Media url</label>
-            <input id="media-form" type={"text"} className={styles.__form__relleno} value={mediaUrl} placeholder={'Write or paste the URL of your image'} onChange={e => setMediaUrl(e.target.value)}/>
-
+            <input id="media-form" type="text" className={styles.__form__relleno} value={mediaUrl} placeholder='Write or paste the URL of your image' onChange={e => setMediaUrl(e.target.value)}/>
             <label className={styles.__form__titulo}>Choose a board!</label>
             <select value={boardId} className={styles.__form__selectBoard} onChange={(e) => setBoardId(e.target.value)} >
                 {
@@ -83,7 +82,7 @@ const PinForm = () => {
             </select>
 
             <div className={styles.__button__contenedor}>
-                <input type={"button"} value={"Submit"} className={styles.__form__submit} onClick={submitPinForm} />
+                <input type="button" value="Submit" className={styles.__form__submit} onClick={submitPinForm} />
             </div>
 
         </div>

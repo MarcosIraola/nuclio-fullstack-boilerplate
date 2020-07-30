@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import styles from './App.module.css';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect,
 } from "react-router-dom";
+import styles from './App.module.css';
 import NavBar from "./components/navBar/navBar.view";
 import Home from "./pages/home/home.view";
 import PinForm from "./components/pins/pinForm/pinForm.view";

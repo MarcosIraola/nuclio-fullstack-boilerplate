@@ -36,7 +36,7 @@ const ListPins = () => {
                 return (
                     <PinCard
                         note={pin.note}
-                        media_url={pin.media_url}
+                        mediaUrl={pin.media_url}
                         key={pin.id}
                     />
                 );
