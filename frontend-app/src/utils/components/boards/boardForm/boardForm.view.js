@@ -43,14 +43,17 @@ const BoardForm = () => {
 
             <h1 className={styles.__h1}>Create a Board!</h1>
 
-            <label htmlFor="title-form" className={styles.__form__titulo}>Title</label>
-            <input id="title-form" type="text" value={name} className={styles.__form__relleno} placeholder='Name your board' onChange={e => setName(e.target.value)} />
+            <label htmlFor="title-form" className={styles.__form__titulo}>Title
+                <input id="title-form" type="text" value={name} className={styles.__form__relleno} placeholder='Name your board' onChange={e => setName(e.target.value)} />
+            </label>
 
-            <label htmlFor="description-form" className={styles.__form__titulo}>Description</label>
-            <input id="description-form" type="textarea" className={styles.__form__relleno} value={description} placeholder='Tell us about your board' onChange={e => setDescription(e.target.value)}/>
+            <label htmlFor="description-form" className={styles.__form__titulo}>Description
+                <input id="description-form" type="textarea" className={styles.__form__relleno} value={description} placeholder='Tell us about your board' onChange={e => setDescription(e.target.value)}/>
+            </label>
 
-            <label htmlFor='user-form' className={styles.__form__titulo}>User Id</label>
-            <input id='user-form' type='text' value='asd' className={styles.__form__relleno}/>
+            <label htmlFor='user-form' className={styles.__form__titulo}>User Id
+                <input id='user-form' type='text' value='asd' className={styles.__form__relleno}/>
+            </label>
 
             <div className={styles.__button__contenedor}>
                 <input type="button" value="Submit" className={styles.__form__submit} onClick={submitBoardForm} />

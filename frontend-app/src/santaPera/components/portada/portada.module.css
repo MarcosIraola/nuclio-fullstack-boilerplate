@@ -1,0 +1,52 @@
+.__contenedor {
+    height: 688px;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    /*background-color: #fba363;*/
+}
+
+.__mainPic {
+    margin: 30px 0 0 15px;
+}
+
+.__titulo {
+    width: 522px;
+    height: 54px;
+    margin: 0 auto 0 auto;
+}
+
+.__texto {
+    display: flex;
+    flex-direction: column;
+    /*background-color: red;*/
+    margin: 50px auto 0 auto;
+}
+
+.__vol2 {
+    width: 145px;
+    height: 53px;
+    margin: 5px auto 0 auto;
+}
+
+.__fecha {
+    width: 203px;
+    height: 86px;
+    margin-top: 90px;
+}
+
+.__detalle {
+    width: 186px;
+    height: 127px;
+    margin-left: 440px;
+}
+
+.__lugar {
+    width: 347px;
+    height: 35px;
+    margin: 70px auto 0 auto;
+}
+
+
+

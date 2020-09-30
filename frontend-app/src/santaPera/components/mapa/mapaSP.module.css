@@ -1,0 +1,15 @@
+.__contenedor {
+    width: 100%;
+    text-align: center;
+}
+
+.__titulo {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.__foto {
+    width: 100%;
+    margin-top: 25px;
+}

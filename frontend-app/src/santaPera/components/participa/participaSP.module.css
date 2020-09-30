@@ -1,0 +1,70 @@
+.__contenedor {
+    width: 100%;
+    height: 450px;
+    background-color: #fba363;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 auto 0 auto;
+}
+
+.__titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-top: 30px;
+}
+
+.__contenido {
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+}
+
+.__info {
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.__tituloFrom {
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.__formulario {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.__form__relleno {
+    width: 300px;
+    height: 40px;
+    margin-top: 13px;
+    color: #fba363;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-style: none;
+}
+
+.__boton {
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: #dc9cc4;
+    text-align: center;
+    margin: 20px auto 0 auto;
+    padding-top: 12px;
+}
+
+.__boton:hover {
+    cursor: pointer;
+    background-color: #cd58a1;
+}

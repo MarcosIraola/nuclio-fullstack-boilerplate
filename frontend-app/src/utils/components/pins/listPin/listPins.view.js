@@ -29,7 +29,6 @@ const ListPins = () => {
             .catch(error => console.log(error));
     }, []);
 
-
     return (
         <div className={styles.__contenedor}>
             {pins && pins.map(pin => {
@@ -40,7 +39,8 @@ const ListPins = () => {
                         key={pin.id}
                     />
                 );
-            })}
+            }
+            )}
         </div>
     );
 };
