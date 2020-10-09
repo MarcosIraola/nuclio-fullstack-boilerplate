@@ -67,11 +67,4 @@ class PinController extends Controller
         $pin->delete();
         return response()->json('Pin deleted');
     }
-
-    public function searchPinsByNoteAndColor ($query = ''){
-        $pins = Pin::where('color', 'LIKE', '%' . $query . '%')
-            ->orWhere('note', $query)
-            ->get();
-        return response()->json($pins);
-    }
 }
